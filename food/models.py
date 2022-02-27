@@ -10,3 +10,4 @@ class Item(models.Model):
     item_name = models.CharField(max_length=200)
     item_desc = models.CharField(max_length=200)
     item_price = models.FloatField()
+    item_image = models.CharField(max_length=500, default='https://www.dirtyapronrecipes.com/wp-content/uploads/2015/10/food-placeholder.png')
