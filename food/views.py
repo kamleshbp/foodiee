@@ -12,8 +12,8 @@ def index(request):
         'item_list': item_list
     })
 
-def item(request):
-    return HttpResponse('<h1>This is an Item.</h1>')
+# def item(request):
+#     return HttpResponse('<h1>This is an Item.</h1>')
 
 def detail(request, item_id):
     item = Item.objects.get(pk=item_id)
