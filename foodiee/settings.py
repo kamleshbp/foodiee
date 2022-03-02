@@ -126,3 +126,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Redirect the user to index page after successful login
 LOGIN_REDIRECT_URL = 'food:index'
+
+# Redirect the annonymous users for login
+LOGIN_URL = 'login'
