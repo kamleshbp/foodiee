@@ -3,6 +3,8 @@ from django.http import HttpResponse
 
 from food.models import Item
 from .forms import ItemForm
+
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def index(request):
@@ -12,15 +14,17 @@ def index(request):
         'item_list': item_list
     })
 
-def item(request):
-    return HttpResponse('<h1>This is an Item.</h1>')
+# def item(request):
+#     return HttpResponse('<h1>This is an Item.</h1>')
 
+@login_required
 def detail(request, item_id):
     item = Item.objects.get(pk=item_id)
     return render(request, 'food/details.html', {
         'item': item
     })
 
+@login_required
 def create_item(request):
     form = ItemForm(request.POST or None)
 
@@ -32,6 +36,7 @@ def create_item(request):
         'form': form
     })
 
+@login_required
 def update_item(request, item_id):
     item = Item.objects.get(pk=item_id)
     form = ItemForm(request.POST or None, instance=item)
@@ -44,6 +49,7 @@ def update_item(request, item_id):
         'form': form
     })
 
+@login_required
 def delete_item(request, item_id):
     item = Item.objects.get(pk=item_id)
 
