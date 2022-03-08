@@ -5,6 +5,8 @@ from food.models import Item
 from .forms import ItemForm
 
 from django.contrib.auth.decorators import login_required
+from django.views.generic.list import ListView
+
 # Create your views here.
 
 def index(request):
@@ -13,6 +15,15 @@ def index(request):
     return render(request, 'food/index.html', {
         'item_list': item_list
     })
+
+# class based view
+
+class IndexClassView(ListView):
+
+    model = Item
+    template_name = 'food/index.html'
+    context_object_name = 'item_list'
+
 
 # def item(request):
 #     return HttpResponse('<h1>This is an Item.</h1>')
