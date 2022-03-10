@@ -9,8 +9,8 @@
     <title>Document</title>
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <a href="{% url 'food:index' %}" class="navbar-brand">Foodiee</a>
+    <nav class="navbar navbar-dark bg-dark" style="margin-bottom: 1rem;">
+        <a href="{% url 'food:index' %}" class="navbar-brand"> Foodiee</a>
         <div class="navbar">
             <a class="nav-item nav-link" href="{% url 'food:create_item'%}">Add item</a>
             {% if user.is_authenticated %}
