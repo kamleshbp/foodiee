@@ -1,8 +1,9 @@
-{% extends 'food/base.html' %}
-{% block body %}
-    <form method="POST">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit">Save</button>
-    </form>
-{% endblock %}
+{% extends 'food/card.html' %}
+
+{% block cardtitle%}
+    Add a new Item
+{% endblock%}
+
+{% block cardbutton%}
+    Add
+{% endblock%}

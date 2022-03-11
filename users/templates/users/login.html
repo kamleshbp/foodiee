@@ -1,10 +1,9 @@
-{% extends 'food/base.html' %}
+{% extends 'food/card.html' %}
 
-{% block body %}
+{% block cardtitle%}
+    Login
+{% endblock%}
 
-    <form method="POST">
-        {% csrf_token %}
-        {{ form }}
-        <button class="" type="submit">Login</button>
-    </form>
-{% endblock %}
+{% block cardbutton%}
+    Login
+{% endblock%}
