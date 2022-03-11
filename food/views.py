@@ -80,10 +80,13 @@ def update_item(request, item_id):
     if form.is_valid():
         form.save()
         return redirect('food:index')
-    
-    return render(request, 'food/item-form.html', {
-        'form': form
-    })
+
+    if item.item_created_by == request.user:
+        return render(request, 'food/item-form.html', {
+            'form': form
+        })
+    else:
+        return redirect('food:unauthorized')
 
 @login_required
 def delete_item(request, item_id):
@@ -93,6 +96,14 @@ def delete_item(request, item_id):
         item.delete()
         return redirect('food:index')
 
-    return render(request, 'food/item-delete.html', {
+    if item.item_created_by == request.user:
+        return render(request, 'food/item-delete.html', {
         'item': item
-    })
+        })
+    else:
+        return redirect('food:unauthorized')
+
+
+def unauthorized(request):
+
+    return render(request, 'food/unauthorized.html')

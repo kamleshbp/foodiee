@@ -16,5 +16,7 @@ urlpatterns = [
     # update item
     path('update/<int:item_id>/', views.update_item, name='update_item'),
     # delete item
-    path('delete/<int:item_id>/', views.delete_item, name='delete_item')
+    path('delete/<int:item_id>/', views.delete_item, name='delete_item'),
+    # Unauthorized page
+    path('unauthorized/', views.unauthorized, name='unauthorized')
 ]
