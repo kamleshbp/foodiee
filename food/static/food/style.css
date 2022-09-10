@@ -1,3 +1,7 @@
 body {
-    background-color: yellowgreen;
+    background-color: lightcyan;
+}
+
+.row {
+    --bs-gutter-x: 0;
 }
