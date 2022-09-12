@@ -5,3 +5,7 @@ body {
 .row {
     --bs-gutter-x: 0;
 }
+
+nav a {
+    margin-left: 10px;
+}
